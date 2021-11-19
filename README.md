@@ -34,3 +34,4 @@ of time to decode the same image.
 
 * Cover more image decoders.
 * Find a good corpus of images to use.
+* Investigate JPEG decoding at low image sizes.
