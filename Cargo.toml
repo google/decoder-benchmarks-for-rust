@@ -1,5 +1,5 @@
 [package]
-name = "benchmarks"
+name = "image_decoder_benchmarks"
 version = "0.1.0"
 edition = "2018"
 
@@ -14,5 +14,5 @@ turbojpeg = {version = "0.2", features = ["image"]}
 criterion = { version = "0.3", features = ["html_reports"] }
 
 [[bench]]
-name = "my_benchmark"
+name = "jpeg_benchmark"
 harness = false
