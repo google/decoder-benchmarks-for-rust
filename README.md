@@ -16,7 +16,7 @@ For example on Mac OS:
 
 The following results come from a run on a MacOS device with a 2.6GHz 6-Core Intel Core i7 processor and 16GB 2667 MHz DDR4 RAM.
 
-![Line graph displaying JPEG decoding time of turbojpeg and jpeg-decoder on various image sizes.](lines.svg)
+![Line graph displaying JPEG decoding time of turbojpeg and jpeg-decoder on various image sizes.](lines.png)
 
 This data is also presented in the graph below.
 Very roughly speaking, `jpeg-decoder` is slower than `turbojpeg`, taking roughly an additional 25%
