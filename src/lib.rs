@@ -4,8 +4,9 @@ use std::fs::File;
 use std::io::Read;
 use turbojpeg::decompress_image;
 
-pub const IMAGES: [&str; 4] = [
+pub const IMAGES: [&str; 5] = [
     "images/venice-2000x3000.jpg",
+    "images/venice-1500x2250.jpg",
     "images/venice-1000x1500.jpg",
     "images/venice-500x750.jpg",
     "images/venice-100x150.jpg",
