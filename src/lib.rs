@@ -4,12 +4,16 @@ extern crate turbojpeg as turbo;
 use std::fs::File;
 use std::io::Read;
 
-pub const IMAGES: [&str; 5] = [
+pub const IMAGES: [&str; 9] = [
     "images/venice-2000x3000.jpg",
     "images/venice-1500x2250.jpg",
     "images/venice-1000x1500.jpg",
     "images/venice-500x750.jpg",
+    "images/venice-200x300.jpg",
     "images/venice-100x150.jpg",
+    "images/venice-50x75.jpg",
+    "images/venice-20x30.jpg",
+    "images/venice-10x15.jpg",
 ];
 
 pub fn load_image_to_memory(filename: &str) -> Vec<u8> {
