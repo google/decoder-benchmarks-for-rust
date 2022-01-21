@@ -16,19 +16,23 @@ For example on Mac OS:
 
 The following results come from a run on a MacOS device with a 2.6GHz 6-Core Intel Core i7 processor and 16GB 2667 MHz DDR4 RAM.
 
-![Line graph displaying JPEG decoding time of turbojpeg and jpeg-decoder on various image sizes.](lines.png)
+![Line graph displaying JPEG decoding time of turbojpeg and jpeg-decoder on various image sizes.](lines.svg)
 
 This data is also presented in the graph below.
-Very roughly speaking, `jpeg-decoder` is slower than `turbojpeg`, taking roughly an additional 25%
-of time to decode the same image.
+Very roughly speaking, `jpeg-decoder` is slower than `turbojpeg`, taking roughly an additional 30%
+of time to decode the same image for larger images, but much longer on smaller images.
 
-| Image Size (pixels) | Image Size (bytes) | jpeg-decoder (ms) | turbojpeg (ms) | jpeg-decoder / turbojpeg |
-| ---: | ---: | ---: | ---: | ---: |
-| 100x150	| 8,043	    | 0.558	| 0.308	| 181% |
-| 500x750	| 137,799	| 7.50	| 5.84	| 128% |
-| 1000x1500	| 508,530	| 27.2	| 23.1	| 118% |
-| 1500x2250	| 1,079,283	| 63.0	| 61.4	| 103% |
-| 2000x3000	| 1,809,144	| 109	| 87.5	| 125% |
+| Test case | jpeg-decoder (ms) | turbojpeg (ms) | jpeg-decoder / turbojpeg |
+| :--- | ---: | ---: | ---: |
+| venice-10x15.jpg | 0.2198 | 0.02008 | 1095% |
+| venice-20x30.jpg | 0.2224 | 0.02691 | 826% |
+| venice-50x75.jpg | 0.3036 | 0.09911 | 306% |
+| venice-100x150.jpg | 0.5583 | 0.301 | 186% |
+| venice-200x300.jpg | 1.517 | 0.9919 | 153% |
+| venice-500x750.jpg | 7.658 | 5.723 | 134% |
+| venice-1000x1500.jpg | 28.86 | 22.1 | 131% |
+| venice-1500x2250.jpg | 62.59 | 48.88 | 128% |
+| venice-2000x3000.jpg | 108.0 | 84.41 | 128% |
 
 ## Further work
 
