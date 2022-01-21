@@ -25,15 +25,15 @@ of time to decode the same image for larger images, but much longer on smaller i
 
 | Test case | jpeg-decoder (ms) | turbojpeg (ms) | jpeg-decoder / turbojpeg |
 | :--- | ---: | ---: | ---: |
-| venice-10x15.jpg | 0.2198 | 0.02008 | 1095% |
-| venice-20x30.jpg | 0.2224 | 0.02691 | 826% |
-| venice-50x75.jpg | 0.3036 | 0.09911 | 306% |
-| venice-100x150.jpg | 0.5583 | 0.301 | 186% |
-| venice-200x300.jpg | 1.517 | 0.9919 | 153% |
-| venice-500x750.jpg | 7.658 | 5.723 | 134% |
-| venice-1000x1500.jpg | 28.86 | 22.1 | 131% |
-| venice-1500x2250.jpg | 62.59 | 48.88 | 128% |
-| venice-2000x3000.jpg | 108.0 | 84.41 | 128% |
+| venice-10x15.jpg | 0.1101 | 0.01993 | 552% |
+| venice-20x30.jpg | 0.1346 | 0.02691 | 500% |
+| venice-50x75.jpg | 0.2395 | 0.09818 | 244% |
+| venice-100x150.jpg | 0.577 | 0.2972 | 194% |
+| venice-200x300.jpg | 1.646 | 0.9864 | 167% |
+| venice-500x750.jpg | 8.483 | 5.633 | 151% |
+| venice-1000x1500.jpg | 31.82 | 22.74 | 140% |
+| venice-1500x2250.jpg | 73.13 | 49.36 | 148% |
+| venice-2000x3000.jpg | 126.2 | 84.25 | 150% |
 
 ## Further work
 

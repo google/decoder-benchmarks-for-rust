@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-use image_decoder_benchmarks::{
+use decoder_benchmarks_for_rust::{
   IMAGES,
   load_image_to_memory,
   decode_jpeg_decoder,

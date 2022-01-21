@@ -14,7 +14,7 @@
 
 use criterion::{black_box, criterion_group, criterion_main, Criterion, BenchmarkId, Throughput};
 
-use image_decoder_benchmarks::{
+use decoder_benchmarks_for_rust::{
     IMAGES,
     load_image_to_memory,
     decode_jpeg_decoder,
