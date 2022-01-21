@@ -23,7 +23,7 @@ use image_decoder_benchmarks::{
 
 use std::time::Duration;
 
-fn bench_fibs(c: &mut Criterion) {
+fn bench_jpegs(c: &mut Criterion) {
     let mut group = c.benchmark_group("Images");
     group.measurement_time(Duration::from_secs(15));
 
@@ -44,5 +44,5 @@ fn bench_fibs(c: &mut Criterion) {
     group.finish();
 }
 
-criterion_group!(benches, bench_fibs);
+criterion_group!(benches, bench_jpegs);
 criterion_main!(benches);
