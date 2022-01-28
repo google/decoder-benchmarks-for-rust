@@ -12,16 +12,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-use decoder_benchmarks_for_rust::{
-  IMAGES,
-  load_image_to_memory,
-  decode_jpeg_decoder,
-  decode_turbojpeg,
-};
+use decoder_benchmarks_for_rust::read_file;
+use decoder_benchmarks_for_rust::jpeg::{decode_jpeg_decoder, decode_turbojpeg, IMAGES};
 
 fn main() {
     for image in IMAGES.iter() {
-        let vec = load_image_to_memory(image);
+        let vec = read_file(image);
         println!("{} turbo       : {:?}", image, decode_turbojpeg(&vec));
         println!("{} jpeg_decoder: {:?}", image, decode_jpeg_decoder(&vec));
     }

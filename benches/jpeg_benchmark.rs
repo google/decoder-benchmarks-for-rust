@@ -14,12 +14,8 @@
 
 use criterion::{black_box, criterion_group, criterion_main, Criterion, BenchmarkId, Throughput};
 
-use decoder_benchmarks_for_rust::{
-    IMAGES,
-    load_image_to_memory,
-    decode_jpeg_decoder,
-    decode_turbojpeg,
-};
+use decoder_benchmarks_for_rust::read_file;
+use decoder_benchmarks_for_rust::jpeg::{decode_jpeg_decoder, decode_turbojpeg, IMAGES};
 
 use std::time::Duration;
 
@@ -28,7 +24,7 @@ fn bench_jpegs(c: &mut Criterion) {
     group.measurement_time(Duration::from_secs(15));
 
     for image in IMAGES.iter() {
-        let contents = load_image_to_memory(image);
+        let contents = read_file(image);
 
         let size = contents.len();
         group.throughput(Throughput::Bytes(size as u64));
