@@ -13,12 +13,18 @@
 // limitations under the License.
 
 use decoder_benchmarks_for_rust::read_file;
-use decoder_benchmarks_for_rust::jpeg::{decode_jpeg_decoder, decode_turbojpeg, IMAGES};
+use decoder_benchmarks_for_rust::jpeg::{decode_jpeg_decoder, decode_turbojpeg, IMAGES as JPEGS};
+use decoder_benchmarks_for_rust::png::{decode_spng, IMAGES as PNGS};
 
 fn main() {
-    for image in IMAGES.iter() {
+    for image in JPEGS.iter() {
         let vec = read_file(image);
         println!("{} turbo       : {:?}", image, decode_turbojpeg(&vec));
         println!("{} jpeg_decoder: {:?}", image, decode_jpeg_decoder(&vec));
+    }
+
+    for image in PNGS.iter() {
+        let data = read_file(image);
+        println!("{} spng        : {:?}", image, decode_spng(&data));
     }
 }

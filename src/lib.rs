@@ -13,6 +13,7 @@
 // limitations under the License.
 
 pub mod jpeg;
+pub mod png;
 
 use std::fs::File;
 use std::io::Read;

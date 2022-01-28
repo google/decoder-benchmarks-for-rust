@@ -29,7 +29,7 @@ pub const IMAGES: [&str; 9] = [
 
 pub fn decode_turbojpeg(contents: &[u8]) -> (u32, u32) {
     let image: image::RgbImage = turbojpeg::decompress_image(&contents)
-        .expect("count not decompress image");
+        .expect("could not decompress image");
     image.dimensions()
 }
 
