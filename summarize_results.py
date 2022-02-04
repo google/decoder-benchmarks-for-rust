@@ -33,7 +33,7 @@ def parse_results_path(path):
 
     # Example path:
     #   target/criterion/Images/turbo/images_venice-500x750.jpg/new/estimates.json
-    #   1      2         3      4     5                         6   7
+    #   0      1         2      3     4                         5   6
     return (parts[3], parts[4])
 
 def extract_result(path):
@@ -53,22 +53,33 @@ def extract_results(base_path):
 
         results[test][group] = extract_result(file)
 
+    print_results(results, 'jpeg_decoder', 'turbo', 'jpeg-decoder', 'turbojpeg')
+    print_results(results, 'png', 'spng', 'png', 'spng')
+
+    print("Don't forget to update lines.svg")
+    print("  cp target/criterion/jpegs/report/lines.svg .")
+
+def print_results(results, group1, group2, group1name, group2name):
     # Markdown table header.
-    print("| Test case | jpeg-decoder (ms) | turbojpeg (ms) | jpeg-decoder / turbojpeg |")
+    print("| Test case | {0} (ms) | {1} (ms) | {0} / {1} |"
+            .format(group1name, group2name))
     print("| :--- | ---: | ---: | ---: |")
 
     for test_name in results:
-        jpeg_decoder = results[test_name]['jpeg_decoder']
-        turbo = results[test_name]['turbo']
+        if group1 not in results[test_name]:
+            continue
+        if group2 not in results[test_name]:
+            continue
+
+        result1 = results[test_name][group1]
+        result2 = results[test_name][group2]
         print("| {} | {:.4} | {:.4} | {}% |".format(
             test_name,
-            jpeg_decoder / 1000000,
-            turbo / 1000000,
-            round(jpeg_decoder * 100 / turbo))) 
+            result1 / 1000000,
+            result2 / 1000000,
+            round(result1 * 100 / result2)))
 
     print()
-    print("Don't forget to update lines.svg")
-    print("  cp target/criterion/Images/report/lines.svg .")
 
 if __name__ == '__main__':
     extract_results('target/criterion')

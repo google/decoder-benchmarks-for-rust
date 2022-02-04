@@ -20,5 +20,5 @@ png = "0.17.2"
 criterion = { version = "0.3", features = ["html_reports"] }
 
 [[bench]]
-name = "jpeg_benchmark"
+name = "benchmarks"
 harness = false
