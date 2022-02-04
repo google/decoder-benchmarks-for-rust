@@ -37,3 +37,12 @@ pub fn decode_spng(contents: &[u8]) -> (u32, u32) {
     reader.next_frame(&mut out).expect("could not decode image");
     (info.width, info.height)
 }
+
+pub fn decode_png(contents: &[u8]) -> (u32, u32) {
+    let decoder = png::Decoder::new(contents);
+    let mut reader = decoder.read_info().expect("could not read info");
+    let output_buffer_size = reader.output_buffer_size();
+    let mut out = vec![0; output_buffer_size];
+    reader.next_frame(&mut out).expect("could not decode image");
+    reader.info().size()
+}
