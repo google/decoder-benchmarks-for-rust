@@ -35,6 +35,23 @@ of time to decode the same image for larger images, but much longer on smaller i
 | venice-1500x2250.jpg | 73.13 | 49.36 | 148% |
 | venice-2000x3000.jpg | 126.2 | 84.25 | 150% |
 
+`png` and `spng` are much closer, with `spng` (a wrapper around a C++ library) being faster on larger images and `png`
+(written natively in Rust) being faster on smaller ones.
+
+![Line graph displaying PNG decoding time of png and spng on various image sizes.](png-lines.svg)
+
+| Test case | png (ms) | spng (ms) | png / spng |
+| :--- | ---: | ---: | ---: |
+| images_venice-10x15.png | 0.009756 | 0.004822 | 202% |
+| images_venice-20x30.png | 0.01682 | 0.02313 | 73% |
+| images_venice-50x75.png | 0.06706 | 0.1285 | 52% |
+| images_venice-100x150.png | 0.3028 | 0.4702 | 64% |
+| images_venice-200x300.png | 1.244 | 1.371 | 91% |
+| images_venice-500x750.png | 6.907 | 6.765 | 102% |
+| images_venice-1000x1500.png | 28.48 | 25.22 | 113% |
+| images_venice-1500x2250.png | 66.81 | 58.06 | 115% |
+| images_venice-2000x3000.png | 128.9 | 102.4 | 126% |
+
 ## Further work
 
 * Cover more image decoders.
