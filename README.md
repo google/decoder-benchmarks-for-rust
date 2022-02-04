@@ -42,15 +42,15 @@ of time to decode the same image for larger images, but much longer on smaller i
 
 | Test case | png (ms) | spng (ms) | png / spng |
 | :--- | ---: | ---: | ---: |
-| images_venice-10x15.png | 0.009756 | 0.004822 | 202% |
-| images_venice-20x30.png | 0.01682 | 0.02313 | 73% |
-| images_venice-50x75.png | 0.06706 | 0.1285 | 52% |
-| images_venice-100x150.png | 0.3028 | 0.4702 | 64% |
-| images_venice-200x300.png | 1.244 | 1.371 | 91% |
-| images_venice-500x750.png | 6.907 | 6.765 | 102% |
-| images_venice-1000x1500.png | 28.48 | 25.22 | 113% |
-| images_venice-1500x2250.png | 66.81 | 58.06 | 115% |
-| images_venice-2000x3000.png | 128.9 | 102.4 | 126% |
+| venice-10x15.png | 0.009756 | 0.004822 | 202% |
+| venice-20x30.png | 0.01682 | 0.02313 | 73% |
+| venice-50x75.png | 0.06706 | 0.1285 | 52% |
+| venice-100x150.png | 0.3028 | 0.4702 | 64% |
+| venice-200x300.png | 1.244 | 1.371 | 91% |
+| venice-500x750.png | 6.907 | 6.765 | 102% |
+| venice-1000x1500.png | 28.48 | 25.22 | 113% |
+| venice-1500x2250.png | 66.81 | 58.06 | 115% |
+| venice-2000x3000.png | 128.9 | 102.4 | 126% |
 
 ## Further work
 
