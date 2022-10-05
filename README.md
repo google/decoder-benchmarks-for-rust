@@ -1,7 +1,7 @@
 # Benchmarks for Rust Image Decoders
 
 This project runs benchmarks comparing Rust's native image decoders to ones written in C/C++.
-At the moment, we only look at decoding JPEG, but we hope to expand to more.
+At the moment, we only look at decoding JPEG and PNG, but we hope to expand to more.
 
 ## Running
 
